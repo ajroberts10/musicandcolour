@@ -1,0 +1,33 @@
+{
+  "name": "musicandcolour",
+  "version": "1.0.0",
+  "description": "music and colour website",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajroberts10/musicandcolour.git"
+  },
+  "author": "Adam Roberts",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajroberts10/musicandcolour/issues"
+  },
+  "homepage": "https://github.com/ajroberts10/musicandcolour#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "jshint": "^2.9.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-inject": "^4.2.0",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.1",
+    "gulp-nodemon": "^2.1.0",
+    "jshint-stylish": "^2.2.1",
+    "wiredep": "^4.0.0"
+  }
+}
