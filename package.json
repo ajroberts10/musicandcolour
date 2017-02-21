@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ajroberts10/musicandcolour#readme",
   "dependencies": {
+    "ejs": "^2.5.6",
     "express": "^4.14.1",
     "jshint": "^2.9.4"
   },
