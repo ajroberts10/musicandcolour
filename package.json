@@ -18,11 +18,18 @@
   },
   "homepage": "https://github.com/ajroberts10/musicandcolour#readme",
   "dependencies": {
+    "body-parser": "^1.16.1",
+    "cookie-parser": "^1.4.3",
     "ejs": "^2.5.6",
     "express": "^4.14.1",
+    "express-session": "^1.15.1",
+    "http": "0.0.0",
     "jshint": "^2.9.4",
     "mongodb": "^2.2.24",
-    "mssql": "^3.3.0"
+    "mssql": "^3.3.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
