@@ -1,7 +1,14 @@
 var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
+var sass = require('gulp-sass');
 
-var jsFiles = ['*.js', 'src/**/*.js'];
+var watchedFiles = [
+    '*.js', 
+    'src/**/*.js', 
+    '*.scss', 
+    'src/**/*.js'
+];
+
 
 gulp.task('inject', function() {
     var wiredep = require('wiredep').stream;
@@ -25,14 +32,25 @@ gulp.task('inject', function() {
         .pipe(gulp.dest('./src/views'));
 });
 
+gulp.task('sass', function () {
+  return gulp.src('./src/assets/sass/**/*.scss')
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(gulp.dest('./public/css'));
+});
+
+gulp.task('sass:watch', function () {
+  gulp.watch('./src/assets/sass/**/*.scss', ['sass']);
+});
+
 gulp.task('serve', ['inject'], function(){
     var options = {
         script: 'app.js',
         delayTime: 1,
+        ext: 'js,scss',
         env: {
             'PORT': 5000
         },
-        watch: jsFiles
+        watch: watchedFiles  
     };
 
     return nodemon(options).on('restart', function(ev) {

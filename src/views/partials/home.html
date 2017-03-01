@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block headerIncludes %}
+<title>{{ title }}</title>
+{% endblock %}
+{% block body %}
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/mic2.png')">
+    <div class="container test">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <img src="img/symbol_colour.png">
+                    <h1>Music&Colour</h1>
+                    <hr class="small">
+                    <span class="subheading">Live Music, DJ, Audio Visual</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="home-main row">
+        <div class="col-lg-4 col-m-12">
+            <div class="home-main__button">
+                <a href="/about">Find Out More <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-m-12">
+            <div class="home-main__button">
+                <a href="#">Listen To Demos <i class="fa fa-music" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="col-lg-4 col-m-12">
+            <div class="home-main__button">
+                <a href="#">Contact Us <i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+{% endblock %}
