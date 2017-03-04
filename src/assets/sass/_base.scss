@@ -1,0 +1,43 @@
+body {
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 20px;
+  color: $musicGrey;
+  -webkit-tap-highlight-color: $musicPink;
+}
+
+p {
+  line-height: 1.5;
+  margin: 30px 0;
+  a {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800;
+}
+
+a {
+  color: $musicGrey;
+  &:hover, &:focus {
+    color: $musicPink;
+  }
+  img {
+    &:hover, &:focus {
+      cursor: zoom-in;
+    }
+  }
+}
+
+blockquote {
+  color: $mobileGrey;
+  font-style: italic;
+}
+
+hr.small {
+  max-width: 100px;
+  margin: 15px auto;
+  border-width: 4px;
+  border-color: white;
+}

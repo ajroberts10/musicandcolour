@@ -1,0 +1,58 @@
+.post-preview > {
+  a {
+    color: $musicGrey;
+    &:hover, &:focus {
+      text-decoration: none;
+      color: $musicPink;
+    }
+    > {
+      .post-title {
+        font-size: 30px;
+        margin-top: 30px;
+        margin-bottom: 10px;
+      }
+      .post-subtitle {
+        margin: 0;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .post-meta {
+    color: $mobileGrey;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+    > a {
+      text-decoration: none;
+      color: $musicGrey;
+      &:hover, &:focus {
+        color: $musicPink;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .post-preview > a > .post-title {
+    font-size: 36px;
+  }
+}
+
+.section-heading {
+  font-size: 36px;
+  margin-top: 60px;
+  font-weight: 700;
+}
+
+.caption {
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  font-style: italic;
+  margin: 0;
+  display: block;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

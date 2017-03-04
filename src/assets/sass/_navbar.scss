@@ -1,0 +1,130 @@
+.navbar-custom {
+  position: absolute;
+  top: 1;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  .navbar-brand {
+    font-weight: 600;
+    padding-top: 10px !important;
+  }
+  .navbar-header .navbar-toggle {
+    color: $mobileGrey;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  .nav li a {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar-custom {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    .navbar-brand {
+      color: $mobileGrey;
+      padding: 10px 20px 20px 20px;
+      &:hover, &:focus {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+    .nav li a {
+      color: white;
+      padding: 20px;
+      &:hover, &:focus {
+        color: $musicPink;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1170px) {
+  .navbar-custom {
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    .navbar-brand {
+      color: $mobileGrey;
+      padding: 10px 20px 20px 20px;
+      &:hover, &:focus {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+    .nav li a {
+      color: white;
+      padding: 20px;
+      &:hover, &:focus {
+        color: $musicPink;
+      }
+    }
+     
+    &.is-fixed {
+      /* when the user scrolls down, we hide the header right above the viewport */
+      position: fixed;
+      top: -61px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-bottom: 1px solid #f2f2f2;
+      -webkit-transition: -webkit-transform 0.3s;
+      -moz-transition: -moz-transform 0.3s;
+      transition: transform 0.3s;
+      .navbar-brand {
+        color: $musicGrey;
+        &:hover, &:focus {
+          color: $musicPink;
+        }
+      }
+      .nav li a {
+        color: $musicGrey;
+        &:hover, &:focus {
+          color: $musicPink;
+        }
+      }
+    }
+    &.is-visible {
+      /* if the user changes the scrolling direction, we show the header */
+      -webkit-transform: translate3d(0, 100%, 0);
+      -moz-transform: translate3d(0, 100%, 0);
+      -ms-transform: translate3d(0, 100%, 0);
+      -o-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+}
+
+.nav-light li a {
+  color: $mobileGrey !important;
+  &:hover, &:focus {
+    color: $musicPink !important;
+  }
+}
+
+.navbar-brand img {
+  cursor: pointer !important;
+  width: 250px;
+  height: 40px;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar-brand img {
+      width: 190px;
+      height: 35px;
+    }
+}

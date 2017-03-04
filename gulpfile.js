@@ -33,7 +33,7 @@ gulp.task('inject', function() {
 });
 
 gulp.task('sass', function () {
-  return gulp.src('./src/assets/sass/**/*.scss')
+  return gulp.src('./src/assets/sass/musicAndColour.scss')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(gulp.dest('./public/css'));
 });

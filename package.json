@@ -4,7 +4,7 @@
   "description": "music and colour website",
   "main": "app.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha --recursive",
     "start": "node app.js"
   },
   "repository": {
@@ -34,12 +34,17 @@
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "gulp": "^3.9.1",
     "gulp-inject": "^4.2.0",
     "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.1",
     "gulp-nodemon": "^2.1.0",
     "jshint-stylish": "^2.2.1",
+    "mocha": "^3.2.0",
+    "node-mocks-http": "^1.6.1",
+    "should": "^11.2.0",
+    "sinon": "^1.17.7",
     "wiredep": "^4.0.0"
   }
 }
