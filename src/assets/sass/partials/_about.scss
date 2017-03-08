@@ -56,3 +56,43 @@
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+
+.about {
+  padding-top: 70px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#myCarousel { 
+  padding-top: 20px; 
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  padding-top: 40px;
+
+  @media only screen and  (min-width:641px)  {
+    font-size: 20px;
+    .carousel-caption {
+      padding-bottom: 60px;
+    }
+  }
+}
+#myCarousel img {
+  object-fit: cover;
+  width: 1200px;
+  height: 400px;
+  opacity: 0.8;
+  filter: brightness(30%)
+}
+
+#myCarousel .nav a small {
+    display:block;
+}
+#myCarousel .nav {
+    background:#eee;
+}
+#myCarousel .nav a {
+    border-radius:0px;
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover {
+    background-color: $musicPink !important;
+}
