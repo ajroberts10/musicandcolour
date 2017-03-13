@@ -17,6 +17,7 @@ $font_7: serif;
 //urls
 $url_0: url(../img/mic2.png);
 
+
 //@extend-elements
 //original selectors
 //.site-heading .subheading, .page-heading .subheading
@@ -73,10 +74,6 @@ $url_0: url(../img/mic2.png);
 	font-style: italic;
 	font-weight: 300;
 	font-size: 20px;
-	a: ;
-}
-@media only screen and(min-device-width: 320px) and(max-device-width: 568px) and(-webkit-min-device-pixel-ratio: 2) {
-
 }
 @media only screen and(min-width:641px) {
 	.intro-header {
@@ -108,6 +105,31 @@ $url_0: url(../img/mic2.png);
 }
 .home-main {
 	text-align: center;
+
+  &__button {
+    margin: 20px 0 0;
+    a, span {
+      color: white;
+      display: block;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 15px 25px;
+      background-color: #464646;
+      border-radius: 8px;
+      width: 100%;
+      
+    }
+    a {
+      &:hover, &:focus {
+        color: white;
+        background-color: $musicPink;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 .btn {
@@ -126,6 +148,10 @@ $url_0: url(../img/mic2.png);
 .home-container {
 	padding-bottom: 50px;
 	position: relative;
+
+  img {
+    width: 100%;
+  }
 }
 .home-text {
 	margin-left: 40px;
@@ -350,7 +376,4 @@ $url_0: url(../img/mic2.png);
 	top: 0;
 	left: 0;
 	right: 0;
-}
-&.container {
-	padding-top: 0;
 }
