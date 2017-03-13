@@ -63,10 +63,8 @@
 }
 
 #myCarousel { 
-  padding-top: 20px; 
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  padding-top: 40px;
 
   @media only screen and  (min-width:641px)  {
     font-size: 20px;
@@ -95,4 +93,8 @@
 
 .nav-pills > .active > a, .nav-pills > .active > a:hover {
     background-color: $musicPink !important;
+}
+
+.about-title {
+  margin-bottom: 20px;
 }

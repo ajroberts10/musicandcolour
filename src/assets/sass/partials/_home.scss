@@ -1,136 +1,356 @@
+//colors
+$black: black;
+$white: white;
+$black_20: rgba(0, 0, 0, 0.2);
+$white_40: rgba(255,255,255,.4);
+
+//fonts
+$font_0: Open Sans;
+$font_1: Helvetica Neue;
+$font_2: Helvetica;
+$font_3: Arial;
+$font_4: sans-serif;
+$font_5: Lora;
+$font_6: Times New Roman;
+$font_7: serif;
+
+//urls
+$url_0: url(../img/mic2.png);
+
+//@extend-elements
+//original selectors
+//.site-heading .subheading, .page-heading .subheading
+%extend_1 {
+	font-size: 24px;
+	line-height: 1.1;
+	display: block;
+	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+	font-weight: 300;
+	margin: 10px 0 0;
+}
+
 .intro-header {
-
-  background-color: black;
-  background: no-repeat center center;
-  background-attachment: scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  margin-bottom: 50px;
-  height: 400px; 
-  -o-background-size: cover;
-
-  
-  .site-heading, .post-heading, .page-heading {
-    padding: 100px 0 50px;
-    color: white;
-
-    img {
-      height: 150px;
-    }
-  }
-  .site-heading, .page-heading {
-    text-align: center;
-  }
-  .site-heading h1, .page-heading h1 {
-    margin-top: 0;
-    font-size: 50px;
-  }
-  .site-heading .subheading, .page-heading .subheading {
-    font-size: 24px;
-    line-height: 1.1;
-    display: block;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    margin: 10px 0 0;
-  }
-  .post-heading {
-    h1 {
-      font-size: 35px;
-    }
-    .subheading, .meta {
-      line-height: 1.1;
-      display: block;
-    }
-    .subheading {
-      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-size: 24px;
-      margin: 10px 0 30px;
-      font-weight: 600;
-    }
-    .meta {
-      font-family: 'Lora', 'Times New Roman', serif;
-      font-style: italic;
-      font-weight: 300;
-      font-size: 20px;
-      a {
-        color: white;
-      }
-    }
-  }
+	background-color: $black;
+	background: no-repeat center center;
+	background-attachment: scroll;
+	background-size: cover;
+	margin-bottom: 50px;
+	height: 400px;
+}
+.site-heading {
+	text-align: center;
+	h1 {
+		margin-top: 0;
+		font-size: 50px;
+	}
+	.subheading {
+		@extend %extend_1;
+	}
+}
+.page-heading {
+	text-align: center;
+	h1 {
+		margin-top: 0;
+		font-size: 50px;
+	}
+	.subheading {
+		@extend %extend_1;
+	}
 }
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    .intro-header {
-        .site-heading h1, .page-heading h1 {
-          margin-top: 0;
-          font-size: 30px;
-        }
-    }
+.subheading {
+	line-height: 1.1;
+	display: block;
+	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+	font-size: 24px;
+	margin: 10px 0 30px;
+	font-weight: 600;
 }
-
-@media only screen and  (min-width:641px)  {
-  .intro-header {
-    height: 500px;
-  }
+.meta {
+	line-height: 1.1;
+	display: block;
+	font-family: $font_5, $font_6, $font_7;
+	font-style: italic;
+	font-weight: 300;
+	font-size: 20px;
+	a: ;
 }
+@media only screen and(min-device-width: 320px) and(max-device-width: 568px) and(-webkit-min-device-pixel-ratio: 2) {
 
-@media only screen and  (min-width:961px)  {
-  .intro-header {
-    background-attachment: fixed;
-    height: 600px;
-  }
 }
-
-@media only screen and (min-width: 768px) {
-  .intro-header {
-    .site-heading, .post-heading, .page-heading {
-      padding: 100px 0;
-    }
-
-    .site-heading h1, .page-heading h1 {
-      font-size: 80px;
-    }
-
-    .post-heading {
-      h1 {
-        font-size: 55px;
-      }
-      .subheading {
-        font-size: 30px;
-      }
-    }
-  }
+@media only screen and(min-width:641px) {
+	.intro-header {
+		height: 500px;
+	}
+	.home-logo {
+		display: none;
+	}
+	.carousel-inner .item .container {
+		padding-top: 80px;
+	}
 }
-
+@media only screen and(min-width:961px) {
+	.intro-header {
+		background-attachment: fixed;
+		height: 600px;
+	}
+}
+@media only screen and(min-width: 768px) {
+	.subheading {
+		font-size: 30px;
+	}
+	.site-heading h1 {
+		font-size: 80px;
+	}
+	.page-heading h1 {
+		font-size: 80px;
+	}
+}
 .home-main {
-  text-align: center;
+	text-align: center;
+}
 
-  &__button {
-    margin: 20px 0 0;
-    a, span {
-      color: white;
-      display: block;
-      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      text-transform: uppercase;
-      font-size: 16px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      padding: 15px 25px;
-      background-color: #464646;
-      border-radius: 8px;
-      width: 100%;
-      
-    }
-    a {
-      &:hover, &:focus {
-        color: white;
-        background-color: $musicPink;
-        text-decoration: none;
-      }
-    }
-  }
+.btn {
+	padding: 10px 20px;
+	border: 0 none;
+	font-weight: 700;
+	letter-spacing: 1px;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 8px;
+}
+.btn-fom {
+	background-color: $musicPink;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 8px;
+}
+.home-container {
+	padding-bottom: 50px;
+	position: relative;
+}
+.home-text {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+#first-slider {
+	padding: 0;
+	color: $white;
+	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+	// font-size: 25px;
+	p {
+		font-size: 20px;
+		background-color: $black_20;
+	}
+	.carousel-indicators {
+		bottom: 0;
+		li {
+			width: 22px;
+			height: 22px;
+			background-color: $white_40;
+			border: none;
+		}
+		.active {
+			width: 24px;
+			height: 24px;
+			background-color: $musicPink;
+			border: none;
+		}
+	}
+	.carousel-control {
+		width: 6%;
+		//Instead of the line below you could use @include text-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		text-shadow: none;
+		&.right {
+			background-image: none;
+		}
+		&.left {
+			background-image: none;
+		}
+	}
+	h3 {
+		animation-delay: 1s;
+		img {
+			height: 40px;
+			width: 40px;
+		}
+	}
+	h4 {
+		animation-delay: 2s;
+	}
+	h2 {
+		animation-delay: 3s;
+	}
+	h1 {
+		font-size: 35px;
+		font-weight: bold;
+	}
+	.p {
+		padding-top: 125px;
+		text-align: center;
+		a {
+			text-decoration: underline;
+		}
+	}
+	.slide1 {
+		background-image: $url_0;
+		background-attachment: scroll;
+		background-size: cover;
+	}
+	.slide2 {
+		background-image: $url_0;
+		background-attachment: scroll;
+		background-size: cover;
+	}
+	.slide3 {
+		background-image: $url_0;
+		background-attachment: scroll;
+		background-size: cover;
+	}
+	.slide4 {
+		background-image: $url_0;
+		background-attachment: scroll;
+		background-size: cover;
+	}
+	.carousel .item {
+		min-height: 400px;
+		height: 100%;
+		width: 100%;
+	}
+}
+.carousel-fade {
+	.carousel-inner {
+		.item {
+			//Instead of the line below you could use @include transition-property($property-1, $property-2, $property-3, $property-4, $property-5, $property-6, $property-7, $property-8, $property-9, $property-10)
+			transition-property: opacity;
+			opacity: 0;
+		}
+		.active {
+			opacity: 1;
+			&.left {
+				opacity: 0;
+				left: 0;
+				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+				transform: translate3d(0, 0, 0);
+			}
+			&.right {
+				opacity: 0;
+				left: 0;
+				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+				transform: translate3d(0, 0, 0);
+			}
+		}
+		.next {
+			left: 0;
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: translate3d(0, 0, 0);
+			&.left {
+				opacity: 1;
+			}
+		}
+		.prev {
+			left: 0;
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: translate3d(0, 0, 0);
+			&.right {
+				opacity: 1;
+			}
+		}
+	}
+	.carousel-control {
+		z-index: 2;
+	}
+}
+.carousel-control {
+	opacity: 1;
+	filter: alpha(opacity=100);
+	.fa-angle-right {
+		position: absolute;
+		top: 50%;
+		z-index: 5;
+		display: inline-block;
+		right: 50%;
+		width: 38px;
+		height: 38px;
+		margin-top: -15px;
+		font-size: 30px;
+		color: $white;
+		border: 3px solid $white;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 53px;
+	}
+	.fa-angle-left {
+		position: absolute;
+		top: 50%;
+		z-index: 5;
+		display: inline-block;
+		left: 50%;
+		width: 38px;
+		height: 38px;
+		margin-top: -15px;
+		font-size: 30px;
+		color: $white;
+		border: 3px solid $white;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 53px;
+	}
+}
+@media screen and(min-width: 980px) {
+	#first-slider {
+		font-size: 35px;
+		h1 {
+			font-size: 45px;
+			font-weight: bold;
+		}
+		p {
+			font-size: 24px;
+		}
+		.carousel .item {
+			min-height: 600px;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+@media screen and(max-width: 640px) {
+	#first-slider {
+		font-size: 20px;
+		p {
+			font-size: 16px;
+			text-align: center;
+		}
+		h3 {
+			text-align: center;
+		}
+		.carousel .item {
+			min-height: 500px;
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.header-text {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	.home-logo {
+		display: none;
+	}
+}
+.slide1 .btn-fom {
+	display: block;
+	margin: auto;
+	position: absolute;
+	left: 42%;
+	bottom: 100px;
+}
+.carousel-inner .item .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+&.container {
+	padding-top: 0;
 }
