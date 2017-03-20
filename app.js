@@ -24,28 +24,12 @@ nunjucks.configure('./src/views', {
     watch: true
 });
 
-var nav = [
-    {
-        Link: '/Books',
-        Text: 'Book'
-    },
-    {
-        Link: '/Authors',
-        Text: 'Author'
-    }
-];
-
 var homeRouter = require('./src/routes/homeRoutes')();
-var aboutRouter = require('./src/routes/aboutRoutes')();
-// var bookRouter = require('./src/routes/bookRoutes')(nav);
-// var adminRouter = require('./src/routes/adminRoutes')(nav);
-// var authRouter = require('./src/routes/authRoutes')(nav);
+var demosRouter = require('./src/routes/demosRoutes')();
 
 app.use('/', homeRouter);
-app.use('/about', aboutRouter);
-// app.use('/Books', bookRouter);
-// app.use('/Admin', adminRouter);
-// app.use('/Auth', authRouter);
+app.use('/demos', demosRouter);
+
 
 var port = 5000;
 

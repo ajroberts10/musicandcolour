@@ -1,7 +1,9 @@
 var aboutController = function(nav) {
     var getIndex = function(req, res) {
-        res.render('partials/about.html', {
-            title: 'About'
+        var demos = require('../../config/demos');
+        res.render('partials/demos.html', {
+            title: 'Demos',
+            demos: demos.tracks
         });
     };   
 
