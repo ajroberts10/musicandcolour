@@ -1,0 +1,44 @@
+{
+    "tracks": [
+        {
+            "title": "Good Luck",
+            "originalArtist":  "Basement Jaxx (Ella Eyre cover)",
+            "audioSource": "https://s3.eu-west-2.amazonaws.com/musicandcolour-mp3/goodluck_better.mp3"
+        },
+        {
+            "title": "Mr Brightside",
+            "originalArtist":  "The Killers",
+            "audioSource": "https://s3.eu-west-2.amazonaws.com/musicandcolour-mp3/mr_brightside_acoustic4.mp3"
+        },
+        {
+            "title": "Sweet Child Of Mine",
+            "originalArtist":  "Guns N Roses",
+            "audioSource": "https://s3.eu-west-2.amazonaws.com/musicandcolour-mp3/SweetChild_1.mp3"
+        },
+        {
+            "title": "Babylon",
+            "originalArtist":  "David Grey",
+            "audioSource": "https://s3.eu-west-2.amazonaws.com/musicandcolour-mp3/babylon.mp3"
+        },
+        {
+            "title": "A-Team",
+            "originalArtist":  "Ed Sheeran",
+            "audioSource": "https://s3.eu-west-2.amazonaws.com/musicandcolour-mp3/a_team.mp3"
+        },
+        {
+            "title": "Long Train Running (live)",
+            "originalArtist":  "Doobie Brothers",
+            "audioSource": "https://s3.eu-west-2.amazonaws.com/musicandcolour-mp3/longtrain.mp3"
+        },
+        {
+            "title": "I'm Yours (live)",
+            "originalArtist":  "Jason Mraz",
+            "audioSource": "https://s3.eu-west-2.amazonaws.com/musicandcolour-mp3/imyours_house310416.mp3"
+        },
+        {
+            "title": "She's Electric (live)",
+            "originalArtist":  "Oasis",
+            "audioSource": "https://s3.eu-west-2.amazonaws.com/musicandcolour-mp3/sheselectric(live).mp3"
+        }
+    ]
+}

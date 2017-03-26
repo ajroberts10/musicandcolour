@@ -1,6 +1,6 @@
-var aboutController = function(nav) {
+var demosController = function(nav) {
     var getIndex = function(req, res) {
-        var demos = require('../../config/demos');
+        var demos = require('../../data/demos');
         res.render('partials/demos.html', {
             title: 'Demos',
             demos: demos.tracks
@@ -12,4 +12,4 @@ var aboutController = function(nav) {
     } 
 };
 
-module.exports = aboutController;
+module.exports = demosController;

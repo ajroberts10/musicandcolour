@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var passport = require('passport');
 var session = require('express-session');
 var nunjucks = require('nunjucks');
+var dateMiddleware = require('./src/middleware/dateMiddleware');
 const path = require('path');
 var app = express();
 
@@ -12,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(session({secret: 'library'}));
+app.use(dateMiddleware);
 
 require('./src/config/passport')(app);
 

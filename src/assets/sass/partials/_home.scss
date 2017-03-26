@@ -140,11 +140,6 @@ $url_0: url(../img/mic2.png);
 	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 	border-radius: 8px;
 }
-.btn-fom {
-	background-color: $musicPink;
-	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
-	border-radius: 8px;
-}
 .home-container {
 	padding-bottom: 50px;
 	position: relative;
@@ -294,10 +289,10 @@ $url_0: url(../img/mic2.png);
 		z-index: 5;
 		display: inline-block;
 		right: 50%;
-		width: 38px;
-		height: 38px;
+		width: 28px;
+		height: 28px;
 		margin-top: -15px;
-		font-size: 30px;
+		font-size: 20px;
 		color: $white;
 		border: 3px solid $white;
 		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
@@ -309,16 +304,42 @@ $url_0: url(../img/mic2.png);
 		z-index: 5;
 		display: inline-block;
 		left: 50%;
-		width: 38px;
-		height: 38px;
+		width: 28px;
+		height: 28px;
 		margin-top: -15px;
-		font-size: 30px;
+		font-size: 20px;
 		color: $white;
 		border: 3px solid $white;
 		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 		border-radius: 53px;
 	}
 }
+
+.slide1 .btn-fom {
+	background: $musicPink;
+	border-radius: 8px;
+	display: block;
+	font-size: 12px;
+	margin: auto;
+	margin-bottom: 30px;
+}
+.carousel-inner .item .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+@media (min-width:641px)  {
+	.slide1 .btn-fom {
+		margin-bottom: 100px;
+	}
+}
+
 @media screen and(min-width: 980px) {
 	#first-slider {
 		font-size: 35px;
@@ -335,7 +356,26 @@ $url_0: url(../img/mic2.png);
 			width: 100%;
 		}
 	}
+
+	.carousel-control {
+		.fa-angle-right {
+			width: 38px;
+			height: 38px;
+			font-size: 30px;
+		}
+
+		.fa-angle-left {
+			width: 38px;
+			height: 38px;
+			font-size: 30px;
+		}
+	}
+
+	.slide1 .btn-fom {
+		margin-bottom: 200px;
+	}	
 }
+
 @media screen and(max-width: 640px) {
 	#first-slider {
 		font-size: 20px;
@@ -360,20 +400,4 @@ $url_0: url(../img/mic2.png);
 		display: none;
 	}
 }
-.slide1 .btn-fom {
-	display: block;
-	margin: auto;
-	position: absolute;
-	left: 42%;
-	bottom: 100px;
-}
-.carousel-inner .item .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	bottom: 0;
-	top: 0;
-	left: 0;
-	right: 0;
-}
+
