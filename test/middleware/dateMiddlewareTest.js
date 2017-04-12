@@ -13,8 +13,7 @@ describe('Date Middleware Tests', function() {
         middleware(req, res, done);
     });
 
-    it('gets current year', function(done) {
-        
+    it('gets current year', function(done) {      
         expect(res.locals.year).to.equal(expectedYear);
         done(); 
     });

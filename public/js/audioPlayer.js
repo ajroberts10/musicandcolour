@@ -2,7 +2,8 @@ var music = document.getElementById('music'); // id for audio element
 var duration = music.duration; // Duration of audio clip, calculated here for embedding purposes
 var pButton = document.getElementById('pButton'); // play button
 var playhead = document.getElementById('playhead'); // playhead
-var timeline = document.getElementById('timeline'); // timeline
+var time = document.getElementById("time"); // duration
+var currentTime = document.getElementById("pButton"); // track timer
 
 // timeline width adjusted for playhead
 var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
@@ -67,16 +68,24 @@ function moveplayhead(event) {
 // Synchronizes playhead position with current point in audio
 function timeUpdate() {
     var playPercent = timelineWidth * (music.currentTime / duration);
+    var minutes = Math.floor(music.currentTime / 60);
+    var seconds = Math.floor(music.currentTime - minutes * 60);
+
+    seconds = (seconds < 10) ? "0"+seconds: seconds;
+
+    currentTime.innerHTML = minutes + ":" + seconds;
     playhead.style.marginLeft = playPercent + "px";
-    if (music.currentTime == duration) {
-        pButton.className = "";
-        pButton.className = "play";
-    }
+
+
 }
 
 //Play and Pause
 function play(obj) {
-    var el = document.getElementById(obj.id);
+    var el = document.getElementById(obj.id);    
+    var ms = el.dataset.time,
+    min = Math.floor((ms/1000/60) << 0),
+    sec = Math.floor((ms/1000) % 60);
+
     // start music
     if (music.paused) { 
         music.src = el.dataset.audiosrc;    
@@ -84,12 +93,15 @@ function play(obj) {
         music.play();
 
         el.className = "demo-button_pause";
+        time.innerHTML = min + ':' + sec;
 
     } else { 
         // if music is playing
         if(el.className == "demo-button_pause") {
             music.pause();
             el.className = "demo-button_play";
+            time.innerHTML = '';
+            currentTime.innerHTML = '';
         
         }
     }
@@ -104,4 +116,16 @@ music.addEventListener("canplaythrough", function() {
 // Returns elements left position relative to top-left of viewport
 function getPosition(el) {
     return el.getBoundingClientRect().left;
+}
+
+function sticky_relocate() {
+    var window_top = $(window).scrollTop();
+    var div_top = $('#sticky-anchor').offset().top;
+    if (window_top > div_top) {
+        $('#sticky').addClass('stick');
+        $('#sticky-anchor').height($('#sticky').outerHeight());
+    } else {
+        $('#sticky').removeClass('stick');
+        $('#sticky-anchor').height(0);
+    }
 }

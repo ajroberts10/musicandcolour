@@ -89,7 +89,7 @@ $url_0: url(../img/mic2.png);
 @media only screen and(min-width:961px) {
 	.intro-header {
 		background-attachment: fixed;
-		height: 600px;
+		height: 500px;
 	}
 }
 @media only screen and(min-width: 768px) {
@@ -140,11 +140,17 @@ $url_0: url(../img/mic2.png);
 	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
 	border-radius: 8px;
 }
+
 .home-container {
 	padding-bottom: 50px;
 	position: relative;
 
   img {
+	display: block;
+	margin-left: auto;
+    margin-right: auto;
+	padding-top: 50px;
+	margin-bottom: 40px;
     width: 100%;
   }
 }
@@ -335,12 +341,25 @@ $url_0: url(../img/mic2.png);
 }
 
 @media (min-width:641px)  {
+	.home-container {
+		img {
+			padding-top: 140px;
+			width: 90%
+		}
+	}
 	.slide1 .btn-fom {
 		margin-bottom: 100px;
 	}
 }
 
 @media screen and(min-width: 980px) {
+
+	.home-container {
+		img {
+			padding-top: 140px;
+			width: 80%
+		}
+	}
 	#first-slider {
 		font-size: 35px;
 		h1 {
@@ -351,7 +370,7 @@ $url_0: url(../img/mic2.png);
 			font-size: 24px;
 		}
 		.carousel .item {
-			min-height: 600px;
+			min-height: 500px;
 			height: 100%;
 			width: 100%;
 		}

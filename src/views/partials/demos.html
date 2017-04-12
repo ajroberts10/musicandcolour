@@ -3,24 +3,36 @@
 <title>{{ title }}</title>
 {% endblock %}
 {% block body %}
-{% include "page-header-light.html" %}
+{% include "page-header.html" %}
 <!-- Page Header -->
+    <header class="intro-header" style="background-image: url('img/acoustic.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Demos</h1>
+                        <hr class="small">
+                        <span class="subheading">Select a track below to take a listen</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="sticky-anchor"></div>
+    <div id="sticky" class="audio">
+        <audio id="music">
+        </audio>
+        <div id="audioplayer">
+            <div id="pButton" class="col-xs-3"></div>
+            <div id="timeline" class="col-xs-6">    
+                <div id="playhead"></div>
+            </div>
+            <div id="time" class="col-xs-3"></div>
+        </div>
+    </div>
 
 <!-- Main Content -->
 <div class="container demos">
-    <div class="about-title">
-        <h1>Demos</h1>
-    </div>
-    <div class="audio">
-      <audio id="music">
-      </audio>
-      <div id="audioplayer">
-          <div id="pButton"></div>
-          <div id="timeline">    
-          <div id="playhead"></div>
-        </div>
-      </div>
-    </div>
     <div class="container">
         <div id="rates">
             {% for track in demos %}
@@ -29,11 +41,11 @@
                         <div class="item">{{ track.title }}</div>
                     </div>
                     <div class="col-xs-4 col-sm-4">
-                        <div class="item">{{ track.originalArtist }}</div>
+                        <div class="item">{{ track.description }}</div>
                     </div>
                     <div class="col-xs-4 col-sm-4">
                         <div class="item">
-                              <button id="{{ loop.index }}" data-audioSrc="{{ track.audioSource}}" class="demo-button_play" type="button" onclick="play(this)"></button>
+                              <button id="{{ loop.index }}" data-time="{{ track.duration}}" data-audioSrc="{{ track.stream_url}}?client_id=hNUUdMRHaxW8vWlkGnQCIBISnxhKzQuD" class="demo-button_play" type="button" onclick="play(this)"></button>
                         </div>
                     </div>
                 </div>
@@ -43,4 +55,10 @@
 </div>
 <hr>
 <script type="text/javascript" src="js/audioPlayer.js"></script>
+<script>
+    $(function() {
+    $(window).scroll(sticky_relocate);
+    sticky_relocate();
+});
+</script>
 {% endblock %}

@@ -1,15 +1,14 @@
-var demosController = function(nav) {
-    var getIndex = function(req, res) {
-        var demos = require('../../data/demos');
-        res.render('partials/demos.html', {
-            title: 'Demos',
-            demos: demos.tracks
-        });
+var demoService = require('../services/soundcloudService');
+
+var getIndex = function(req, res) {
+        demoService.getPlaylist(function(err, tracks) {
+                res.render('partials/demos.html', {
+                title: 'Demos',
+                demos: tracks
+            });
+        });   
     };   
 
-    return {
-        getIndex: getIndex
-    } 
-};
-
-module.exports = demosController;
+module.exports = {
+    getIndex: getIndex
+}
