@@ -1,4 +1,4 @@
-var controller = require('../../src/controllers/homeController')();
+var controller = require('../../src/controllers/homeController');
 var expect = require('chai').expect;
 var sinon = require('sinon');
 

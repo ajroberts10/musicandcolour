@@ -1,4 +1,3 @@
-var http = require('http');
 var config = require('../../config/config');
 var request = require('superagent');
 
