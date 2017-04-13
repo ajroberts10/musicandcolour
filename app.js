@@ -26,8 +26,8 @@ nunjucks.configure('./src/views', {
     watch: true
 });
 
-var homeRouter = require('./src/routes/homeRoutes')();
-var demosRouter = require('./src/routes/demosRoutes')();
+var homeRouter = require('./src/routes/homeRoutes');
+var demosRouter = require('./src/routes/demosRoutes');
 
 app.use('/', homeRouter);
 app.use('/demos', demosRouter);
