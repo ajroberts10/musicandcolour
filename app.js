@@ -12,8 +12,6 @@ app.use(bodyParser.urlencoded({
 })); 
 app.use(dateMiddleware);
 
-require('./src/config/passport')(app);
-
 app.set('views', 'src/views');
 app.use(express.static(__dirname + '/public'));
 
