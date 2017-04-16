@@ -6,20 +6,14 @@ $white_40: rgba(255,255,255,.4);
 
 //fonts
 $font_0: Open Sans;
-$font_1: Helvetica Neue;
-$font_2: Helvetica;
-$font_3: Arial;
-$font_4: sans-serif;
-$font_5: Lora;
-$font_6: Times New Roman;
-$font_7: serif;
+$font_1: sans-serif;
 
 //@extend-elements
 //original selectors
 //.site-heading .subheading, .page-heading .subheading
 %extend_1 {
 	font-size: 24px;
-	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+	font-family: $font_0, $font_1;
 	font-weight: 300;
 }
 

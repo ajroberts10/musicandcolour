@@ -1,8 +1,5 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser');
-var passport = require('passport');
-var session = require('express-session');
 var nunjucks = require('nunjucks');
 var dateMiddleware = require('./src/middleware/dateMiddleware');
 const path = require('path');
@@ -10,9 +7,9 @@ var app = express();
 
 app.use(express.static('public'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
-app.use(cookieParser());
-app.use(session({secret: 'library'}));
+app.use(bodyParser.urlencoded({
+  extended: true
+})); 
 app.use(dateMiddleware);
 
 require('./src/config/passport')(app);
@@ -28,9 +25,11 @@ nunjucks.configure('./src/views', {
 
 var homeRouter = require('./src/routes/homeRoutes');
 var demosRouter = require('./src/routes/demosRoutes');
+var contactRouter = require('./src/routes/contactRoutes');
 
 app.use('/', homeRouter);
 app.use('/demos', demosRouter);
+app.use('/contact', contactRouter);
 
 
 var port = 5000;

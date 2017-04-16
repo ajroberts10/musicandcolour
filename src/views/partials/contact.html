@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block headerIncludes %}
+<title>{{ title }}</title>
+{% endblock %}
+{% block body %}
+{% include "page-header.html" %}
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('img/light.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Contact Us</h1>
+                    <hr class="small">
+                    <span class="subheading">Use the form below to get in touch</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Main Content -->
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                {% if status %}
+                    <div class="alert alert-{{ status }} alert-dismissable">
+                        {{ message }}
+                    </div>
+                {% endif %}
+                <p>Want to get in touch? Fill out the form below to send us a message and we'll try to get back to you within 24 hours!</p>
+                <form action='/contact' name="sentMessage" id="contactForm" method="post"  novalidate>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="Name" id="name">
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Email Address</label>
+                            <input type="email" name="email" class="form-control" placeholder="Email Address" id="email">
+                        </div>
+                    </div>
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Message</label>
+                            <textarea rows="5" name="message" class="form-control" placeholder="Message" id="message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row control-group honeypot">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Phone</label>
+                            <input type="text" name="phone" class="form-control" placeholder="Phone" id="phone">
+                        </div>
+                    </div>
+                    <br>
+                    <div id="success"></div>
+                    <div class="row">
+                        <div class="form-group col-xs-12">
+                            <button type="submit" class="btn btn-default contact__send">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<hr>
+{% endblock %}

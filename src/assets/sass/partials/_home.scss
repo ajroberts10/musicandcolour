@@ -6,13 +6,7 @@ $white_40: rgba(255,255,255,.4);
 
 //fonts
 $font_0: Open Sans;
-$font_1: Helvetica Neue;
-$font_2: Helvetica;
-$font_3: Arial;
-$font_4: sans-serif;
-$font_5: Lora;
-$font_6: Times New Roman;
-$font_7: serif;
+$font_1: sans-serif;
 
 //urls
 $url_0: url(../img/mic2.png);
@@ -25,7 +19,7 @@ $url_0: url(../img/mic2.png);
 	font-size: 24px;
 	line-height: 1.1;
 	display: block;
-	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
+	font-family: $font_0, $font_1;
 	font-weight: 300;
 	margin: 10px 0 0;
 }
@@ -62,7 +56,6 @@ $url_0: url(../img/mic2.png);
 .subheading {
 	line-height: 1.1;
 	display: block;
-	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
 	font-size: 24px;
 	margin: 10px 0 30px;
 	font-weight: 600;
@@ -70,7 +63,6 @@ $url_0: url(../img/mic2.png);
 .meta {
 	line-height: 1.1;
 	display: block;
-	font-family: $font_5, $font_6, $font_7;
 	font-style: italic;
 	font-weight: 300;
 	font-size: 20px;
@@ -111,7 +103,6 @@ $url_0: url(../img/mic2.png);
     a, span {
       color: white;
       display: block;
-      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       text-transform: uppercase;
       font-size: 16px;
       font-weight: 800;
@@ -161,8 +152,6 @@ $url_0: url(../img/mic2.png);
 #first-slider {
 	padding: 0;
 	color: $white;
-	font-family: $font_0, $font_1, $font_2, $font_3, $font_4;
-	// font-size: 25px;
 	p {
 		font-size: 20px;
 		background-color: $black_20;
