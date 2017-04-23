@@ -29,8 +29,11 @@ app.use('/', homeRouter);
 app.use('/demos', demosRouter);
 app.use('/contact', contactRouter);
 
-
 var port = 5000;
+if(app.get('env') == 'live') {
+    var port = 80;
+}
+
 
 app.listen(port, function(error) {
     console.log('server running on port ' + port);
