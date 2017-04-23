@@ -8,7 +8,9 @@
                 Menu <i class="fa fa-bars"></i>
             </button>
             {% block logo %}
-            <a class="navbar-brand" href="/"></a>
+                {% if title != "Home" %}
+                    <a class="navbar-brand" href="/"></a>
+                {% endif %}
             {% endblock %}
             
         </div>

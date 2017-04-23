@@ -148,6 +148,10 @@ $url_0: url(../img/mic2.png);
 .home-text {
 	margin-left: 40px;
 	margin-right: 40px;
+
+	p {
+		margin-top: 10px;
+	}
 }
 #first-slider {
 	padding: 0;
@@ -339,6 +343,12 @@ $url_0: url(../img/mic2.png);
 	.slide1 .btn-fom {
 		margin-bottom: 100px;
 	}
+
+	.home-text {
+		p {
+			margin-top: 30px;
+		}
+	}
 }
 
 @media screen and(min-width: 980px) {
@@ -399,7 +409,7 @@ $url_0: url(../img/mic2.png);
 			text-align: center;
 		}
 		.carousel .item {
-			min-height: 500px;
+			min-height: 400px;
 			height: 100%;
 			width: 100%;
 		}
