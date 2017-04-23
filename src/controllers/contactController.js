@@ -10,11 +10,9 @@ var getIndex = function(req, res) {
 
 var submitForm =  function (req, res) {
 
-    console.log('here');
     if(!validateForm(req, res)) {
         return;
     };
-    console.log('now here');
 
     var mailOpts, 
     smtpTrans;
