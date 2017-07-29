@@ -24,8 +24,10 @@ nunjucks.configure('./src/views', {
 var homeRouter = require('./src/routes/homeRoutes');
 var demosRouter = require('./src/routes/demosRoutes');
 var contactRouter = require('./src/routes/contactRoutes');
+var liveRouter = require('./src/routes/liveRoutes');
 
 app.use('/', homeRouter);
+app.use('/live', liveRouter);
 app.use('/demos', demosRouter);
 app.use('/contact', contactRouter);
 

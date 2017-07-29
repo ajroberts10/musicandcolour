@@ -1,0 +1,72 @@
+//fonts
+$font_0: Open Sans;
+$font_1: sans-serif;
+
+%extend_1 {
+	font-size: 24px;
+	font-family: $font_0, $font_1;
+	font-weight: 300;
+}
+
+.row-padding {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.live {
+    margin-top: 30px;
+    @extend %extend_1;
+	width: 100%;
+	font-size: 14px;
+    color: $musicGrey;
+    
+    p {
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        
+    }
+
+}
+
+.form-control {
+    margin-bottom: 25px;
+}
+
+@media only screen and(min-width:641px) {
+	.intro-header {
+		height: 340px;
+	}
+	.home-logo {
+		display: block;
+	}
+}
+@media (min-width: 768px) {
+    .subheading {
+		font-size: 30px;
+	}
+
+	.site-heading h1 {
+		font-size: 80px;
+	}
+
+	.page-heading h1 {
+		font-size: 80px;
+	}
+
+	.live {
+        font-size: 16px;
+        width: 80%;
+	}
+}
+
+@media only screen and(min-width:961px) {
+	.intro-header {
+		height: 440px;
+	}
+
+    .navbar-brand {
+		display: block;
+	}
+
+}
