@@ -1,7 +1,7 @@
-var date = new Date();
-var year = date.getFullYear();
+const date = new Date();
+const year = date.getFullYear();
 
-module.exports = function (req, res, next) {
+module.exports = (req, res, next) => {
     res.locals.year = year;
     next();
 };

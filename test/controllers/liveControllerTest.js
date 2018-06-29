@@ -1,16 +1,16 @@
-var controller = require('../../src/controllers/liveController');
-var expect = require('chai').expect;
-var sinon = require('sinon');
+import controller from '../../src/controllers/liveController';
+import { expect } from 'chai';
+import sinon from 'sinon';
 
-describe('Live Controller Tests', function() {
-  var response =  {render: sinon.stub()}
-  var request  = {};
+describe('Live Controller Tests', () => {
+  const response =  {render: sinon.stub()}
+  const request  = {};
   controller.getIndex(request, response);
 
-  it('renders the live page', function(done) {
+  it('renders the live page', done => {
     expect(response.render.called).to.equal(true);
     expect(response.render.firstCall.args[0]).to.equal('partials/live.html');
-    expect(response.render.firstCall.args[1].title).to.equal('Live');   
-    done(); 
+    expect(response.render.firstCall.args[1].title).to.equal('Live');
+    done();
   });
 });

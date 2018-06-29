@@ -1,7 +1,7 @@
-var express = require('express');
-var demosRouter = express.Router();
+import express from 'express';
+import demosController from '../controllers/demosController';
 
-var demosController = require('../controllers/demosController');
+const demosRouter = express.Router();
 
 demosRouter.route('/')
     .get(demosController.getIndex);

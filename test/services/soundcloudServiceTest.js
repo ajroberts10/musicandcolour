@@ -1,13 +1,12 @@
-var expect = require('chai').expect;
-var sinon = require('sinon');
-var service = require('../../src/services/soundcloudService');
-var nock = require('nock');
-var config = require('../../config/config');
+import { expect } from 'chai';
+import nock from 'nock';
+import config from '../../config/config';
+import service from '../../src/services/soundcloudService';
 
 
-describe('Soundcloud service test', function() {
-    
-    it('gets playlists', function(done) {
+describe('Soundcloud service test', () => {
+
+    it('gets playlists', done => {
 
         nock('https://api.soundcloud.com')
         .get('/playlists/85980757?client_id=' + config.key)
@@ -20,8 +19,8 @@ describe('Soundcloud service test', function() {
                 }
             ]
         });
-        
-        service.getPlaylist(function (err, res) {
+
+        service.getPlaylist((err, res) => {
             expect(res).to.be.an('array');
             expect(res[0]).to.be.an('object');
             done();

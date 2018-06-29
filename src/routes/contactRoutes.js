@@ -1,7 +1,8 @@
-var express = require('express');
-var contactRouter = express.Router();
+import express from 'express';
+import contactController from '../controllers/contactController';
 
-var contactController = require('../controllers/contactController');
+const contactRouter = express.Router();
+
 
 contactRouter.route('/')
     .get(contactController.getIndex);

@@ -1,11 +1,11 @@
-var set = require('../../data/tracks.json');
+import set from '../../data/tracks.json';
 
-var getIndex = function(req, res) {
+const getIndex = (req, res) => {
     res.render('partials/live.html', {
         title: 'Live',
         setList: set.tracks
     });
-};   
+};
 
 module.exports = {
     getIndex: getIndex

@@ -1,7 +1,7 @@
-var express = require('express');
-var homeRouter = express.Router();
+import express from 'express';
+import homeController from '../controllers/homeController';
 
-var homeController = require('../controllers/homeController');
+const homeRouter = express.Router();
 
 homeRouter.route('/')
     .get(homeController.getIndex);

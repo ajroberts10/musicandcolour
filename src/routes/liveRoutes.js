@@ -1,7 +1,7 @@
-var express = require('express');
-var liveRouter = express.Router();
+import express from 'express';
+import liveController from '../controllers/liveController';
 
-var liveController = require('../controllers/liveController');
+const liveRouter = express.Router();
 
 liveRouter.route('/')
     .get(liveController.getIndex);

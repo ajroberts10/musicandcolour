@@ -1,15 +1,12 @@
-var config = require('../../config/config');
-var request = require('superagent');
+import config from '../../config/config';
+import request from 'superagent';
 
-
-var getPlaylist = function(callback) {
-
+const getPlaylist = callback => {
     request
         .get('https://api.soundcloud.com/playlists/85980757?client_id=' + config.key)
-        .end(function(err, res) {
+        .end((err, res) => {
             if (!err) {
-                var playlist = res.body.tracks;
-                callback(null, playlist);
+                callback(null, res.body.tracks);
             } else {
                 callback('Error Occurred!');
             }
