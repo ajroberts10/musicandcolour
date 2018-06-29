@@ -1,13 +1,13 @@
-var demoService = require('../services/soundcloudService');
+import demoService from '../services/soundcloudService';
 
-var getIndex = function(req, res) {
-    demoService.getPlaylist(function(err, tracks) {
+const getIndex = (req, res) => {
+    demoService.getPlaylist((err, tracks) => {
             res.render('partials/demos.html', {
             title: 'Demos',
             demos: tracks
         });
-    });   
-};   
+    });
+};
 
 module.exports = {
     getIndex: getIndex
