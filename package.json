@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha --recursive --compilers js:babel-core/register",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "npm run build && node dist/app.js"
+    "start": "npm run build && node dist/app.js",
+    "prettier": "prettier \"./{src,test}/**/*.{js,jsx}\" --write"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "mocha": "^3.2.0",
     "nock": "^9.0.11",
     "nodemon": "^1.17.5",
+    "prettier": "1.13.7",
     "proxyquire": "^1.7.11",
     "rimraf": "^2.6.2",
     "should": "^11.2.0",

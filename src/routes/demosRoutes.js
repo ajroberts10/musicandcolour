@@ -3,8 +3,6 @@ import demosController from '../controllers/demosController';
 
 const demosRouter = express.Router();
 
-demosRouter.route('/')
-    .get(demosController.getIndex);
-
+demosRouter.route('/').get(demosController.getIndex);
 
 module.exports = demosRouter;

@@ -9,10 +9,9 @@ const getIndex = (req, res) => {
 };
 
 const submitForm = (req, res) => {
-
-    if(!validateForm(req, res)) {
+    if (!validateForm(req, res)) {
         return;
-    };
+    }
 
     let mailOpts;
     let smtpTrans;
@@ -20,7 +19,7 @@ const submitForm = (req, res) => {
     smtpTrans = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: "ajroberts10@googlemail.com",
+            user: 'ajroberts10@googlemail.com',
             pass: config.pass
         }
     });
@@ -29,8 +28,7 @@ const submitForm = (req, res) => {
         from: '',
         to: 'ajroberts10@googlemail.com',
         subject: 'Website contact form',
-        text: 'From: ' + req.body.name + ' (' + req.body.email + ') \n\n'
-               + req.body.message
+        text: 'From: ' + req.body.name + ' (' + req.body.email + ') \n\n' + req.body.message
     };
     smtpTrans.sendMail(mailOpts, (error, response) => {
         if (error) {
@@ -50,9 +48,8 @@ const submitForm = (req, res) => {
 };
 
 const validateForm = (req, res) => {
-
     //check for spambot
-    if(req.body.phone) {
+    if (req.body.phone) {
         res.render('partials/contact.html', {
             title: 'Contact Us',
             status: 'danger',
@@ -62,7 +59,7 @@ const validateForm = (req, res) => {
     }
 
     //check all fields are present
-    if(!req.body.name || !req.body.email || !req.body.message) {
+    if (!req.body.name || !req.body.email || !req.body.message) {
         res.render('partials/contact.html', {
             title: 'Contact Us',
             status: 'warning',
@@ -72,7 +69,7 @@ const validateForm = (req, res) => {
     }
 
     //check email is valid
-    if(!validator.validate(req.body.email)) {
+    if (!validator.validate(req.body.email)) {
         res.render('partials/contact.html', {
             title: 'Contact Us',
             status: 'warning',
@@ -87,4 +84,4 @@ const validateForm = (req, res) => {
 module.exports = {
     getIndex: getIndex,
     submitForm: submitForm
-}
+};

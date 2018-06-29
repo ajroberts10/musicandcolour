@@ -2,7 +2,7 @@ import demoService from '../services/soundcloudService';
 
 const getIndex = (req, res) => {
     demoService.getPlaylist((err, tracks) => {
-            res.render('partials/demos.html', {
+        res.render('partials/demos.html', {
             title: 'Demos',
             demos: tracks
         });
@@ -11,4 +11,4 @@ const getIndex = (req, res) => {
 
 module.exports = {
     getIndex: getIndex
-}
+};
