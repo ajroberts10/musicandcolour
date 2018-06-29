@@ -2,6 +2,7 @@ import { expect } from 'chai';
 import sinon from 'sinon';
 
 const Proxyquire = require('proxyquire').noCallThru();
+
 const expectedTracks = [{ track1: 'test' }];
 
 const getSubject = deps => Proxyquire('../../src/controllers/demosController', deps || {});

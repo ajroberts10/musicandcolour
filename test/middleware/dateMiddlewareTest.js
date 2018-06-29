@@ -1,6 +1,5 @@
-import middleware from '../../src/middleware/dateMiddleware';
 import { expect } from 'chai';
-import sinon from 'sinon';
+import middleware from '../../src/middleware/dateMiddleware';
 
 describe('Date Middleware Tests', () => {
     const req = {};

@@ -8,5 +8,5 @@ const getIndex = (req, res) => {
 };
 
 module.exports = {
-    getIndex: getIndex
+    getIndex
 };

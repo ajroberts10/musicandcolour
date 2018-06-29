@@ -1,6 +1,6 @@
-import controller from '../../src/controllers/contactController';
 import { expect } from 'chai';
 import sinon from 'sinon';
+import controller from '../../src/controllers/contactController';
 
 describe('Contact Controller Tests', () => {
     it('renders the contact page', done => {

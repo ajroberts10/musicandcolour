@@ -8,15 +8,46 @@ const getIndex = (req, res) => {
     });
 };
 
+const validateForm = (req, res) => {
+    // check for spambot
+    if (req.body.phone) {
+        res.render('partials/contact.html', {
+            title: 'Contact Us',
+            status: 'danger',
+            message: 'Spam detected'
+        });
+        return false;
+    }
+
+    // check all fields are present
+    if (!req.body.name || !req.body.email || !req.body.message) {
+        res.render('partials/contact.html', {
+            title: 'Contact Us',
+            status: 'warning',
+            message: 'Please ensure all form fields are completed'
+        });
+        return false;
+    }
+
+    // check email is valid
+    if (!validator.validate(req.body.email)) {
+        res.render('partials/contact.html', {
+            title: 'Contact Us',
+            status: 'warning',
+            message: 'Please provide a valid email address'
+        });
+        return false;
+    }
+
+    return true;
+};
+
 const submitForm = (req, res) => {
     if (!validateForm(req, res)) {
         return;
     }
 
-    let mailOpts;
-    let smtpTrans;
-
-    smtpTrans = nodemailer.createTransport({
+    const smtpTrans = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
             user: 'ajroberts10@googlemail.com',
@@ -24,13 +55,13 @@ const submitForm = (req, res) => {
         }
     });
 
-    mailOpts = {
+    const mailOpts = {
         from: '',
         to: 'ajroberts10@googlemail.com',
         subject: 'Website contact form',
-        text: 'From: ' + req.body.name + ' (' + req.body.email + ') \n\n' + req.body.message
+        text: `From: ${req.body.name} (${req.body.email}) \n\n ${req.body.message}`
     };
-    smtpTrans.sendMail(mailOpts, (error, response) => {
+    smtpTrans.sendMail(mailOpts, error => {
         if (error) {
             res.render('partials/contact.html', {
                 title: 'Contact Us',
@@ -47,41 +78,7 @@ const submitForm = (req, res) => {
     });
 };
 
-const validateForm = (req, res) => {
-    //check for spambot
-    if (req.body.phone) {
-        res.render('partials/contact.html', {
-            title: 'Contact Us',
-            status: 'danger',
-            message: 'Spam detected'
-        });
-        return false;
-    }
-
-    //check all fields are present
-    if (!req.body.name || !req.body.email || !req.body.message) {
-        res.render('partials/contact.html', {
-            title: 'Contact Us',
-            status: 'warning',
-            message: 'Please ensure all form fields are completed'
-        });
-        return false;
-    }
-
-    //check email is valid
-    if (!validator.validate(req.body.email)) {
-        res.render('partials/contact.html', {
-            title: 'Contact Us',
-            status: 'warning',
-            message: 'Please provide a valid email address'
-        });
-        return false;
-    }
-
-    return true;
-};
-
 module.exports = {
-    getIndex: getIndex,
-    submitForm: submitForm
+    getIndex,
+    submitForm
 };

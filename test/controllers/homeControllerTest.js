@@ -1,6 +1,6 @@
-import controller from '../../src/controllers/homeController';
 import { expect } from 'chai';
 import sinon from 'sinon';
+import controller from '../../src/controllers/homeController';
 
 describe('Home Controller Tests', () => {
     const response = { render: sinon.stub() };

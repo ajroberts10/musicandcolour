@@ -1,6 +1,6 @@
-import controller from '../../src/controllers/liveController';
 import { expect } from 'chai';
 import sinon from 'sinon';
+import controller from '../../src/controllers/liveController';
 
 describe('Live Controller Tests', () => {
     const response = { render: sinon.stub() };

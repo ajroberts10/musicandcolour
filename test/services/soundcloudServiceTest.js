@@ -6,7 +6,7 @@ import service from '../../src/services/soundcloudService';
 describe('Soundcloud service test', () => {
     it('gets playlists', done => {
         nock('https://api.soundcloud.com')
-            .get('/playlists/85980757?client_id=' + config.key)
+            .get(`/playlists/85980757?client_id=${config.key}`)
             .reply(200, {
                 tracks: [
                     {
