@@ -63,11 +63,14 @@ const submitForm = (req, res) => {
     };
     smtpTrans.sendMail(mailOpts, error => {
         if (error) {
+            console.log(error.message)
             res.render('partials/contact.html', {
                 title: 'Contact Us',
                 status: 'danger',
                 message: 'Warning'
             });
+            return false;
+
         }
 
         res.render('partials/contact.html', {
@@ -75,6 +78,7 @@ const submitForm = (req, res) => {
             message: "Thank you for your message, we'll be in touch shortly",
             status: 'success'
         });
+        return true;
     });
 };
 
