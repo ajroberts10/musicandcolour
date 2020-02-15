@@ -50,14 +50,14 @@ const submitForm = (req, res) => {
     const smtpTrans = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
-            user: 'ajroberts10@googlemail.com',
+            user: 'adam@musicandcolour.co.uk',
             pass: config.pass
         }
     });
 
     const mailOpts = {
         from: '',
-        to: 'ajroberts10@googlemail.com',
+        to: 'adam@musicandcolour.co.uk',
         subject: 'Website contact form',
         text: `From: ${req.body.name} (${req.body.email}) \n\n ${req.body.message}`
     };
